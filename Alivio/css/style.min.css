@@ -775,16 +775,17 @@ body.ie ._ibg img {
   width: 100%;
   top: 0;
   left: 0;
+  z-index: 50;
   background-color: #fff;
   transition: background-color 0.3s, backdrop-filter 0.3s;
 }
 .header._scroll {
   background-color: rgba(255, 255, 255, 0.8);
 }
-@supports (-webkit-backdrop-filter: blur(2px)) or (backdrop-filter: blur(2px)) {
+@supports (-webkit-backdrop-filter: blur(8px)) or (backdrop-filter: blur(8px)) {
   .header._scroll {
     background-color: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(8px);
   }
 }
 .header._scroll .header__body {
@@ -983,51 +984,73 @@ body.ie ._ibg img {
   }
 }
 
-/*
-//Burger
-.icon-menu {
-	display: none;
-	@media (max-width: $md3+px) {
-		display: block;
-		position: absolute;
-		top: 18px;
-		right: 10px;
-		width: 30px;
-		height: 18px;
-		cursor: pointer;
-		z-index: 5;
-		span {
-			transition: all 0.3s ease 0s;
-			top: calc(50% - 1px);
-			left: 0px;
-			position: absolute;
-			width: 100%;
-			height: 2px;
-			background-color: #000;
-			&:first-child {
-				top: 0px;
-			}
-			&:last-child {
-				top: auto;
-				bottom: 0px;
-			}
-		}
-		&._active {
-			span {
-				transform: scale(0);
-				&:first-child {
-					transform: rotate(-45deg);
-					top: calc(50% - 1px);
-				}
-				&:last-child {
-					transform: rotate(45deg);
-					bottom: calc(50% - 1px);
-				}
-			}
-		}
-	}
-}
-*/
 .page {
   flex: 1 1 auto;
+}
+.hero {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(112.58deg, #ffffff 18.15%, rgba(255, 255, 255, 0) 53.07%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/hero/cover.jpg") center/cover no-repeat;
+}
+@media (max-width: 991.98px) {
+  .hero {
+    background: linear-gradient(112.58deg, #ffffff 18.15%, rgba(255, 255, 255, 0) 100%), linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/hero/cover.jpg") center/cover no-repeat;
+  }
+}
+.hero__container {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+}
+.hero__body {
+  padding: 120px 0px;
+  text-align: center;
+  position: relative;
+}
+@media (min-width: 767.98px) {
+  .hero__body {
+    max-width: 403px;
+    text-align: left;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero__body {
+    padding: 80px 0px;
+  }
+}
+.hero__title {
+  font-family: "Georgia";
+  font-weight: 700;
+  color: #01996d;
+  letter-spacing: 2px;
+  font-size: 65px;
+  line-height: 113.8461538462%;
+  margin: 0px 0px 0.4615384615em 0px;
+}
+@media (max-width: 1370px) {
+  .hero__title {
+    font-size: calc(42px + 23 * ((100vw - 320px) / 1050));
+  }
+}
+.hero__text {
+  color: #484848;
+  font-size: 20px;
+  line-height: 155%;
+  margin: 0px 0px 2.5em 0px;
+}
+@media (max-width: 1370px) {
+  .hero__text {
+    font-size: calc(18px + 2 * ((100vw - 320px) / 1050));
+  }
+}
+@media (max-width: 767.98px) {
+  .hero__text {
+    color: #292929;
+  }
+}
+@media (max-width: 767.98px) {
+  .hero__button {
+    width: 100%;
+  }
 }

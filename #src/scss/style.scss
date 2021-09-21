@@ -87,7 +87,61 @@ body {
 //<ОСНОВНОЙ БЛОК>====================================================================================================
 .page {
 	flex: 1 1 auto;
+	&__hero {
+	}
 }
 //===================================================================================================================================
+.hero {
+	display: flex;
+	min-height: 100vh;
+	position: relative;
+	background: linear-gradient(112.58deg, #ffffff 18.15%, rgba(255, 255, 255, 0) 53.07%),
+		linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url("../img/hero/cover.jpg") center / cover no-repeat;
+	@media (max-width: $md2+px) {
+		background: linear-gradient(112.58deg, #ffffff 18.15%, rgba(255, 255, 255, 0) 100%),
+			linear-gradient(0deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+			url("../img/hero/cover.jpg") center / cover no-repeat;
+	}
 
+	&__container {
+		flex: 1 1 auto;
+		display: flex;
+		align-items: center;
+	}
+	&__body {
+		@media (min-width: $md3+px) {
+			max-width: 403px;
+			text-align: left;
+		}
+		@media (max-width: $md3+px) {
+			padding: 80px 0px;
+		}
+		padding: 120px 0px;
+		text-align: center;
+		position: relative;
+	}
+	&__title {
+		font-family: "Georgia";
+		font-weight: 700;
+		color: $accentColor;
+		letter-spacing: 2px;
+		@include adaptiv-value("font-size", 65, 42, 1);
+		line-height: math.div(74, 65) * 100%;
+		margin: 0px 0px math.div(30, 65) * 1em 0px;
+	}
+	&__text {
+		color: $grayColor;
+		@include adaptiv-value("font-size", 20, 18, 1);
+		line-height: math.div(31, 20) * 100%;
+		margin: 0px 0px math.div(50, 20) * 1em 0px;
+		@media (max-width: $md3+px) {
+			color: $mainColor;
+		}
+	}
+	&__button {
+		@media (max-width: $md3+px) {
+			width: 100%;
+		}
+	}
+}
 //</ОСНОВНОЙ БЛОК>====================================================================================================
