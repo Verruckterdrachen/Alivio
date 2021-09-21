@@ -94,6 +94,8 @@ body {
 	}
 	&__about {
 	}
+	&__products {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -322,6 +324,155 @@ body {
 			left: 0;
 			object-fit: cover;
 			max-width: 100%;
+		}
+	}
+}
+//====================================================================================================
+.products {
+	@include adaptiv-value("padding-top", 120, 40, 1);
+	@include adaptiv-value("padding-bottom", 240, 50, 1);
+	&__body {
+		@media (min-width: $md2+px) {
+			display: flex;
+		}
+	}
+	&__info {
+		@media (min-width: $md2+px) {
+			flex: 0 0 math.div(638.46, 1370) * 100%;
+		}
+	}
+	&__content {
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+		@media (min-width: $md2+px) {
+			@include adaptiv-value("padding-left", 86, 0, 1);
+		}
+	}
+	&__suptitle {
+		font-weight: 600;
+		@include adaptiv-value("font-size", 25, 18, 1);
+		line-height: math.div(39, 25) * 100%;
+		margin: 0px 0px math.div(10, 25) * 1em 0px;
+	}
+	&__title {
+		margin: 0px 0px math.div(18, 50) * 1em 0px;
+	}
+	&__text {
+		margin: 0px 0px math.div(40, $fontSize) * 1em 0px;
+	}
+	&__button {
+		margin: 0px 0px 20px 0px;
+	}
+}
+.info-product {
+	position: relative;
+	@media (min-width: $md2+px) {
+		@include adaptiv-value("margin-left", 60, 0, 1);
+	}
+	@media (max-width: $md2+px) {
+		display: flex;
+		flex-direction: row-reverse;
+		margin: 0px 0px 40px 0px;
+	}
+	&__image {
+		overflow: hidden;
+		border-radius: 18px;
+		background: url("../img/products/01.png") center 30% no-repeat, rgba($accentColor, 20%);
+		padding: 0px 0px math.div(573.26, 638.46) * 100% 0px;
+		@media (max-width: $md2+px) {
+			flex: 0 1 80%;
+			padding: 0px 0px 50% 0px;
+			border-radius: 0px;
+		}
+		@media (max-width: $md4+px) {
+			display: none;
+		}
+	}
+	&__content {
+		@media (min-width: $md2+px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			padding: 22px 15px 30px 15px;
+			position: absolute;
+			width: 100%;
+			left: -60px;
+			bottom: -75px;
+			max-width: 296.14px;
+			overflow: hidden;
+			border-radius: 3px;
+			background-color: #fff;
+			box-shadow: 0px 3.62249493598938px 18.11247444152832px 0px #a5a5a540;
+		}
+		@media (max-width: $md4+px) {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		padding: 0px 30px;
+		flex: 1 1 auto;
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__label {
+		display: inline-block;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: math.div(23, 14) * 100%;
+		margin: 0px 0px math.div(12, 14) * 1em 0px;
+		padding: 0px 0px 7px 0px;
+		border-bottom: 1px solid #000;
+		@media (max-width: $md4+px) {
+			font-size: 18px;
+		}
+	}
+	&__avatar {
+		width: 58px;
+		height: 58px;
+		border-radius: 50%;
+		overflow: hidden;
+		background: url("../img/products/01.png") center 25% no-repeat, rgba($accentColor, 20%);
+		background-size: 78px;
+		margin: 0px 0px 10px 0px;
+		@media (max-width: $md4+px) {
+			width: 200px;
+			height: 200px;
+			background-size: 160px;
+		}
+	}
+	&__name {
+		display: inline-block;
+		font-size: 12px;
+		line-height: math.div(19, 12) * 100%;
+		margin: 0px 0px math.div(20, 12) * 1em 0px;
+		@media (max-width: $md4+px) {
+			font-size: 16px;
+		}
+	}
+	&__title {
+		font-family: "Georgia";
+		font-weight: 700;
+		font-size: 16px;
+		line-height: math.div(25, 16) * 100%;
+		margin: 0px 0px math.div(16, 16) * 1em 0px;
+		@media (max-width: $md4+px) {
+			font-size: 22px;
+		}
+	}
+	&__list {
+		margin: 0px 0px 20px 0px;
+	}
+	&__item {
+		list-style-type: disc;
+		font-size: 12px;
+		line-height: math.div(16, 12) * 100%;
+		&:not(:last-child) {
+			margin: 0px 0px math.div(16, 12) * 1em 0px;
+		}
+		@media (max-width: $md4+px) {
+			font-size: 16px;
 		}
 	}
 }
