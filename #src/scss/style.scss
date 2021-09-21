@@ -92,6 +92,8 @@ body {
 	}
 	&__steps {
 	}
+	&__about {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -227,6 +229,7 @@ body {
 			position: absolute;
 			top: 15px;
 			left: 0;
+			z-index: -1;
 			color: rgba($accentColor, 20%);
 			@include adaptiv-value("font-size", 150, 80, 1);
 			counter-increment: section;
@@ -254,6 +257,71 @@ body {
 					transform: scale(1.05);
 				}
 			}
+		}
+	}
+}
+//====================================================================================================
+.about {
+	background: $accentDarkColor;
+	@include adaptiv-value("padding-top", 230, 40, 1);
+	@include adaptiv-value("padding-bottom", 177, 40, 1);
+	&__container {
+		max-width: 1507px;
+		@media (min-width: $md2+px) {
+			display: flex;
+			align-items: center;
+		}
+	}
+	&__content {
+		margin: 0px 0px 40px 0px;
+		@media (min-width: $md2+px) {
+			padding: 0px 41px 0px 0px;
+			margin: 0px 0px 0px 0px;
+		}
+		& > *:last-child {
+			margin-bottom: 0;
+		}
+	}
+	&__title {
+		color: #fff;
+		margin: 0px 0px math.div(35, 50) * 1em 0px;
+	}
+	&__text {
+		color: #fff;
+		margin: 0px 0px math.div(55, 20) * 1em 0px;
+		@media (max-width: $md2+px) {
+			margin: 0px 0px math.div(40, 20) * 1em 0px;
+		}
+	}
+	&__button {
+		margin: 0px 0px 30px 0px;
+		@media (max-width: $md3+px) {
+			width: 100%;
+		}
+		@media (any-hover: hover) {
+			&:hover {
+				background-color: lighten($accentDarkColor, 15%);
+			}
+		}
+	}
+	&__video {
+		overflow: hidden;
+		border-radius: 5px;
+		@media (min-width: $md2+px) {
+			border-radius: 15px;
+			flex: 0 0 math.div(896, 1507) * 100%;
+			padding: 0px 0px math.div(516, 1507) * 100% 0px;
+		}
+		padding: 0px 0px math.div(540.562, 961) * 100% 0px;
+		position: relative;
+		video {
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			object-fit: cover;
+			max-width: 100%;
 		}
 	}
 }
