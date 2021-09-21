@@ -42,6 +42,7 @@ $accentDarkColor: #245852;
 @import "null";
 body {
 	color: $mainColor;
+	counter-reset: section;
 	&._lock {
 		overflow: hidden;
 	}
@@ -89,6 +90,8 @@ body {
 	flex: 1 1 auto;
 	&__hero {
 	}
+	&__steps {
+	}
 }
 //===================================================================================================================================
 .hero {
@@ -130,9 +133,6 @@ body {
 		margin: 0px 0px math.div(30, 65) * 1em 0px;
 	}
 	&__text {
-		color: $grayColor;
-		@include adaptiv-value("font-size", 20, 18, 1);
-		line-height: math.div(31, 20) * 100%;
 		margin: 0px 0px math.div(50, 20) * 1em 0px;
 		@media (max-width: $md3+px) {
 			color: $mainColor;
@@ -141,6 +141,119 @@ body {
 	&__button {
 		@media (max-width: $md3+px) {
 			width: 100%;
+		}
+	}
+}
+//====================================================================================================
+.steps {
+	@include adaptiv-value("padding-top", 170, 40, 1);
+	padding-bottom: 50px;
+	&__items {
+		display: flex;
+		justify-content: space-between;
+		@media (max-width: $md2+px) {
+			overflow: auto;
+			padding: 0px 0px 20px 0px;
+		}
+	}
+	&__column {
+		flex: 0 0 60%;
+		&:not(:last-child) {
+			margin: 0px 30px 0px 0px;
+		}
+		@media (max-width: $md3+px) {
+			flex: 0 0 90%;
+			&:not(:last-child) {
+				margin: 0px 15px 0px 0px;
+			}
+		}
+		@media (min-width: $md2+px) {
+			flex: 0 1 math.div(392, 1370) * 100%;
+			&:nth-child(2) {
+				padding: 270px 0px 0px 0px;
+			}
+			&:nth-child(3) {
+				padding: 45px 0px 0px 0px;
+			}
+		}
+	}
+}
+.head-steps {
+	@include adaptiv-value("padding-bottom", 200, 40, 1);
+	@media (min-width: $md3+px) {
+		display: flex;
+		justify-content: space-between;
+	}
+	&__main {
+		@media (min-width: $md3+px) {
+			flex: 0 1 38%;
+			margin: 0px 0px 0px 0px;
+		}
+		margin: 0px 0px 30px 0px;
+	}
+	&__suptitle {
+		font-weight: 600;
+		@include adaptiv-value("font-size", 24, 20, 1);
+		line-height: math.div(38, 24) * 100%;
+		margin: 0px 0px math.div(5, 24) * 1em 0px;
+	}
+	&__text {
+		@media (min-width: $md3+px) {
+			padding: 50px 0px 0px 0px;
+			flex: 0 1 47%;
+		}
+	}
+}
+.item-steps {
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	&__content {
+		@media (max-width: $md2+px) {
+			flex: 1 1 auto;
+		}
+	}
+	&__title {
+		font-family: "Georgia";
+		font-weight: 700;
+		font-size: 30px;
+		line-height: math.div(45, 30) * 100%;
+		margin: 0px 0px math.div(50, 30) * 1em 0px;
+		position: relative;
+		&::before {
+			content: "";
+			font-family: "Georgia";
+			font-weight: 700;
+			position: absolute;
+			top: 15px;
+			left: 0;
+			color: rgba($accentColor, 20%);
+			@include adaptiv-value("font-size", 150, 80, 1);
+			counter-increment: section;
+			content: "0" counter(section);
+		}
+		@media (min-width: $md2+px) {
+			padding: 0px 0px 0px 80px;
+			&::before {
+				top: -40px;
+			}
+		}
+	}
+	&__text {
+		margin: 0px 0px math.div(50, 20) * 1em 0px;
+	}
+	&__image {
+		padding: 0px 0px math.div(492, 392) * 100% 0px;
+		overflow: hidden;
+		border-radius: 12px;
+		overflow: hidden;
+		img {
+			transition: transform 0.3s ease 0s;
+			@media (any-hover: hover) {
+				&:hover {
+					transform: scale(1.05);
+				}
+			}
 		}
 	}
 }
