@@ -95,7 +95,7 @@
 		}
 		@media (max-width: 1200px) {
 			&:not(:last-child) {
-				margin: 0px 0px 40px 0px;
+				margin: 0px 0px math.div(40, $fontSize) * 1em 0px;
 			}
 		}
 	}

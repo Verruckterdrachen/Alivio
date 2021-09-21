@@ -1,3 +1,22 @@
 //====================================================================================================
-
+.footer {
+	background: $accentDarkColor;
+	@include adaptiv-value("padding-top", 100, 50, 1);
+	@include adaptiv-value("padding-bottom", 100, 50, 1);
+	&__item {
+		&:not(:last-child) {
+			margin: 0px 0px math.div(60, $fontSize) * 1em 0px;
+		}
+	}
+	&__link {
+		color: #fff;
+		@include adaptiv-value("font-size", 25, 20, 1);
+		line-height: math.div(30, 25) * 100%;
+		@media (any-hover: hover) {
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}
 //====================================================================================================
