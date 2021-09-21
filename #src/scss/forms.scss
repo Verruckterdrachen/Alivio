@@ -19,13 +19,20 @@
 //<BUTTONS (a.btn+tab)>====================================================================================================
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	min-height: 65px;
+	padding: 0px 50px;
+	border-radius: 4px;
+	color: #fff;
+	white-space: nowrap;
+	background-color: $accentColor;
+	transition: background-color 0.3s;
 	@media (any-hover: hover) {
 		&:hover {
+			background-color: $accentDarkColor;
 		}
-	}
-	&._fw {
-		width: 100%;
 	}
 }
 //</BUTTONS>====================================================================================================
